@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Manipulation Example</title>
+</head>
+<body>
+  <p id="text-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+  <button id="uppercase-btn">UpperCase</button>
+  <button id="lowercase-btn">LowerCase</button>
+  <button id="search-btn">Search</button>
+  <button id="length-btn">Length</button>
+
+  <script>
+    const paragraph = document.getElementById("text-paragraph");
+    const uppercaseBtn = document.getElementById("uppercase-btn");
+    const lowercaseBtn = document.getElementById("lowercase-btn");
+    const searchBtn = document.getElementById("search-btn");
+    const lengthBtn = document.getElementById("length-btn");
+
+    uppercaseBtn.addEventListener("click", () => {
+      document.write(paragraph.textContent.toUpperCase());
+    });
+
+    lowercaseBtn.addEventListener("click", () => {
+      document.write(paragraph.textContent.toLowerCase());
+    });
+
+    searchBtn.addEventListener("click", () => {
+      const searchTerm = prompt("Enter a word to search:");
+      if (searchTerm) {
+        document.write(paragraph.textContent.indexOf(searchTerm) !== -1 ? "Found" : "Not Found");
+      }
+    });
+
+    lengthBtn.addEventListener("click", () => {
+      document.write(paragraph.textContent.length);
+    });
+  </script>
+</body>
+</html>
